@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Sep 10 19:36:40 IST 2018
+#Mon Sep 10 23:31:59 IST 2018
 25.file=/home/sahil/project/myPhoneBook/platforms/android/app/build/intermediates/res/debug/resources-debug.ap_/res/drawable-land-mdpi-v4/screen.png
 41.base=/home/sahil/project/myPhoneBook/platforms/android/app/build/intermediates/res/debug/resources-debug.ap_
 25.base=/home/sahil/project/myPhoneBook/platforms/android/app/build/intermediates/res/debug/resources-debug.ap_
