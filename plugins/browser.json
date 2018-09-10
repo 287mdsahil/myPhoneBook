@@ -9,6 +9,9 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.mdsahil.myPhoneBook"
+    },
+    "cordova-plugin-contacts": {
+      "PACKAGE_NAME": "com.mdsahil.myPhoneBook"
     }
   },
   "dependent_plugins": {}
