@@ -1,33 +1,12 @@
-//document.addEventListener("deviceready", onDeviceReady, false);
-//document.addEventListener("deviceready", init, false);
-
-
 function dummy()
 {
 	window.alert("test");
 	console.log("test");
 }
-/*
-function init() 
-{
-	window.alert("run");
-	navigator.contacts.find([navigator.contacts.fieldType.displayName],getContacts,errorHandler);
-}
-
-function errorHandler(e)
-{
-	window.alert("errorHandler: " + e);
-}
-
-function getContacts(c)
-{
-	window.alert("gotContacts, no of results: " + c.length);
-}
-*/
 
 
 
-document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReady);
 function onDeviceReady() 
 {
 	window.alert("ready");

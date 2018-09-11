@@ -5,9 +5,7 @@ function dummy()
 }
 
 
-
-
-document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReady);
 function onDeviceReady() 
 {
 	window.alert("ready");
