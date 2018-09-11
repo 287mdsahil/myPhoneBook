@@ -84,6 +84,14 @@ module.exports = [
         "merges": [
             "navigator.contacts"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-contacts-phonenumbers/www/contactsPhoneNumbers.js",
+        "id": "cordova-plugin-contacts-phonenumbers.contactsPhoneNumbers",
+        "pluginId": "cordova-plugin-contacts-phonenumbers",
+        "clobbers": [
+            "navigator.contactsPhoneNumbers"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -91,7 +99,8 @@ module.exports.metadata =
 {
     "cordova-plugin-whitelist": "1.3.3",
     "cordova-plugin-contacts": "3.0.1",
-    "cordova-plugin-console": "1.1.0"
+    "cordova-plugin-console": "1.1.0",
+    "cordova-plugin-contacts-phonenumbers": "0.0.11"
 }
 // BOTTOM OF METADATA
 });

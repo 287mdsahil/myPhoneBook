@@ -15,6 +15,9 @@
     },
     "cordova-plugin-console": {
       "PACKAGE_NAME": "com.mdsahil.myPhoneBook"
+    },
+    "cordova-plugin-contacts-phonenumbers": {
+      "PACKAGE_NAME": "com.mdsahil.myPhoneBook"
     }
   },
   "dependent_plugins": {},
@@ -103,11 +106,20 @@
       "merges": [
         "navigator.contacts"
       ]
+    },
+    {
+      "file": "plugins/cordova-plugin-contacts-phonenumbers/www/contactsPhoneNumbers.js",
+      "id": "cordova-plugin-contacts-phonenumbers.contactsPhoneNumbers",
+      "pluginId": "cordova-plugin-contacts-phonenumbers",
+      "clobbers": [
+        "navigator.contactsPhoneNumbers"
+      ]
     }
   ],
   "plugin_metadata": {
     "cordova-plugin-whitelist": "1.3.3",
     "cordova-plugin-contacts": "3.0.1",
-    "cordova-plugin-console": "1.1.0"
+    "cordova-plugin-console": "1.1.0",
+    "cordova-plugin-contacts-phonenumbers": "0.0.11"
   }
 }
