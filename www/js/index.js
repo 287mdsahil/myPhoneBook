@@ -12,7 +12,7 @@ function onSuccess(c)
 	var i=0;
 	for(i=0;i<c.length;i++)
 	{
-		var row = table.insertRow(i+1);
+		var row = table.insertRow(i);
 		
 		//displaying name
 		var name = c[i].displayName;
@@ -20,14 +20,15 @@ function onSuccess(c)
 		cell1.innerHTML = name;
 		
 		//displaying contact numbers
+		/*
 		if(c[i].phoneNumbers!=null)
 		{
 			var number = c[i].phoneNumbers[0];
 			var cell2 = row.insertCell(1);
 			cell2.innerHTML = number.value;
 		}
-		
-		console.dir(c[i]);
+		*/
+		//console.dir(c[i]);
 	}
 }
 

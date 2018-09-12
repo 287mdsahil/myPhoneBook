@@ -1,4 +1,14 @@
-#contact_list {
+#contact_list
+{
 	width: 100%;
-	text-align: center;
+	text-align: left;
+	border-collapse: collapse;
 }
+
+#contact_list td
+{
+	padding: 25px;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+}
+

@@ -11,12 +11,8 @@
     <body>
         <table id="contact_list">
         	<tr>
-        		<th>Name</th>
-        		<th>Contact number</th>
-        	</tr>
-        	<tr>
-        		<td>Sahil</td>
-        		<td>9434122239</td>
+        		<td>Name</td>
+        		<td>Contact number</td>
         	</tr>
         </table>
         </br>
