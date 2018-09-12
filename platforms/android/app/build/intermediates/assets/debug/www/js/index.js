@@ -7,7 +7,7 @@
 
 function onSuccess(c)
 {
-	window.alert("contacts found: " + c.length);
+	//window.alert("contacts found: " + c.length);
 	var table = document.getElementById("contact_list");
 	var i=0;
 	for(i=0;i<c.length;i++)
@@ -17,7 +17,12 @@ function onSuccess(c)
 		//displaying name
 		var name = c[i].displayName;
 		var cell1 = row.insertCell(0);
-		cell1.innerHTML = name;
+		var img = document.createElement('img');
+		img.src="img/default-user-img.png";
+		cell1.appendChild(img);
+		var nameDiv = document.createElement('div');
+		nameDiv.innerHTML = name;
+		cell1.appendChild(nameDiv);
 		
 		//displaying contact numbers
 		/*
@@ -28,6 +33,9 @@ function onSuccess(c)
 			cell2.innerHTML = number.value;
 		}
 		*/
+		
+		
+		
 		//console.dir(c[i]);
 	}
 }

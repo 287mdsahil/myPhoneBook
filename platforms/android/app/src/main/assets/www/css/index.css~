@@ -1,13 +1,35 @@
+body 
+{
+	margin: 0;
+	padding: 0;	
+}
 #contact_list
 {
 	width: 100%;
 	text-align: left;
-	border-collapse: collapse;
+	border-spacing: 7px;
+	background-color: rgb(237,237,237);
+
 }
 
 #contact_list td
 {
-	padding: 25px;
-	border-top: 2px solid black;
+	padding: 10px;
+	border: 2px solid rgb(239,239,239);
+	background-color: rgb(240,240,240);
+	border-radius: 10px;
+	box-shadow: 2px 2px 5px rgb(210,210,210) , -1px -1px 2px rgb(210,210,210);
+	text-align: left;
 }
 
+#contact_list td img
+{
+	max-height: 10%;
+	float: left;
+}
+
+#contact_list td div
+{
+	float: left;
+	padding-left: 20px;
+}
