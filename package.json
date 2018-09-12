@@ -11,7 +11,6 @@
     "license": "Apache-2.0",
     "dependencies": {
         "cordova-android": "^7.0.0",
-        "cordova-browser": "^5.0.4",
         "cordova-plugin-console": "^1.1.0",
         "cordova-plugin-contacts": "^3.0.1",
         "cordova-plugin-contacts-phonenumbers": "0.0.11",
@@ -25,7 +24,6 @@
             "cordova-plugin-contacts-phonenumbers": {}
         },
         "platforms": [
-            "browser",
             "android"
         ]
     }
