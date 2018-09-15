@@ -2,6 +2,7 @@ body
 {
 	margin: 0;
 	padding: 0;	
+	overflow-x: scroll;
 }
 #contact_list
 {
@@ -9,7 +10,6 @@ body
 	text-align: left;
 	border-spacing: 7px;
 	background-color: rgb(237,237,237);
-
 }
 
 #contact_list td
@@ -24,8 +24,9 @@ body
 
 #contact_list td img
 {
-	max-height: 10%;
+	height: 50px;
 	float: left;
+	border-radius:50%;
 }
 
 #contact_list td div

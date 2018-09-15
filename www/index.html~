@@ -11,8 +11,6 @@
     <body>
         <table id="contact_list">
         	<tr>
-        		<td>Name</td>
-        		<td>Contact number</td>
         	</tr>
         </table>
         </br>
