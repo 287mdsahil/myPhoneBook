@@ -1,5 +1,5 @@
 
-//sorts the contacts in alphabetical order of the displayName-------------------------------
+//sorts the contacts in alphabetical order of the displayName-------------------------------(bugged, whats the problem i guess???????)
 function contactSort(c)
 {
 	for(var i=0;i<c.length-1;i++)
@@ -7,7 +7,7 @@ function contactSort(c)
 		var m=i;
 		for(var j=i+1;j<c.length;j++)
 		{
-			if(c[j].displayName<c[m].displayName)
+			if(c[j].displayName>c[m].displayName)
 				m=j;
 				console.log(c[j].displayName + "<" + c[m].displayName);
 		}
@@ -20,13 +20,25 @@ function contactSort(c)
 	return c;
 }
 
+//compares the contacts wrt to the displayName---------------------------------------------
+function contactCompare(a,b)
+{
+	if(a.name.formatted<b.name.formatted)
+		return -1;
+	else if(a.name.formatted>b.name.formatted)
+		return 1;
+	else 
+		return 0;
+}
+
 
 //stores the contacts and displays them the table view--------------------------------------
 function onSuccess(c)
 {
-	console.dir(c);
-	c=contactSort(c);
-	console.dir(c);
+	
+	//c=contactSort(c);
+	c.sort(contactCompare);
+	
 	//window.alert("contacts found: " + c.length);
 	var table = document.getElementById("contact_list");
 	var i=0;
@@ -37,19 +49,25 @@ function onSuccess(c)
 		//displaying name
 		var name = c[i].displayName;
 		var cell1 = row.insertCell(0);
-		var img = document.createElement('img');
+		var img1 = document.createElement('img');
+		img1.classList.add("profilePic");
 		
 		if(c[i].photos!=null)
-			img.src=c[i].photos[0].value;
+			img1.src=c[i].photos[0].value;
 		else
-			img.src="img/default-user-img.png";
+			img1.src="img/default-user-img.png";
 		
 		
-		cell1.appendChild(img);
+		cell1.appendChild(img1);
 		var nameDiv = document.createElement('div');
 		nameDiv.innerHTML = name;
 		cell1.appendChild(nameDiv);
 		
+		var img2 = document.createElement('img');
+		img2.classList.add("menuDots");
+		img2.src="img/call2.png"
+		
+		cell1.appendChild(img2);
 		//displaying contact numbers
 		/*
 		if(c[i].phoneNumbers!=null)
@@ -70,9 +88,7 @@ function onSuccess(c)
 document.addEventListener("deviceready", onDeviceReady);
 function onDeviceReady() 
 {
-	var fields = 	[navigator.contacts.fieldType.displayName, 
-					navigator.contacts.fieldType.phoneNumbers, 
-					navigator.contacts.fieldType.photos];
+	var fields = 	["*"];
 					
 	navigator.contacts.find(fields, onSuccess);
 }

@@ -2,7 +2,6 @@ body
 {
 	margin: 0;
 	padding: 0;	
-	overflow-x: scroll;
 }
 #contact_list
 {
@@ -22,11 +21,17 @@ body
 	text-align: left;
 }
 
-#contact_list td img
+#contact_list td .profilePic
 {
 	height: 50px;
 	float: left;
 	border-radius:50%;
+}
+
+#contact_list td .menuDots
+{
+	height: 25px;
+	float: right;
 }
 
 #contact_list td div

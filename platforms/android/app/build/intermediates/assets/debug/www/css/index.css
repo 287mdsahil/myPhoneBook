@@ -21,11 +21,17 @@ body
 	text-align: left;
 }
 
-#contact_list td img
+#contact_list td .profilePic
 {
 	height: 50px;
 	float: left;
 	border-radius:50%;
+}
+
+#contact_list td .menuDots
+{
+	height: 50px;
+	float: right;
 }
 
 #contact_list td div

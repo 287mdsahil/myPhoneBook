@@ -9,11 +9,8 @@
         <title>myPhoneBook</title>
     </head>
     <body>
-        <table id="contact_list">
-        	<tr>
-        	</tr>
-        </table>
+        <ul id="contact_list">
+        </ul>
         </br>
-        <!--button id="test" onclick="dummy()">test</button-->
     </body>
 </html>
