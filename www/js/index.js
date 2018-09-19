@@ -20,27 +20,42 @@ function contactSort(c)
 	}
 	return c;
 }
-
+*/
 //compares the contacts wrt to the displayName---------------------------------------------
 function contactCompare(a,b)
 {
-	if(a.name.formatted<b.name.formatted)
-		return -1;
-	else if(a.name.formatted>b.name.formatted)
-		return 1;
-	else 
-		return 0;
+	if(a.displayName!=null && b.displayName!=null)
+	{
+		var as = a.displayName.toUpperCase();
+		var bs = b.displayName.toUpperCase();
+		if(as>bs)
+			return 1;
+		else if(as<bs)
+			return -1;
+		else 
+			return 0;
+	}
+	else
+	{
+		if(a.displayName==null)
+			if(b.displayName==null)
+				return 0;
+			else if(b.displayName!=null)
+				return 1;
+		else 
+			return -1;
+	}
 }
 
 
-*/
+
 
 //stores the contacts and displays them the table view--------------------------------------
 function onSuccess(c)
 {
 	
 	//c=contactSort(c);
-	//c.sort(contactCompare);
+	c.sort(contactCompare);
 	
 	//window.alert("contacts found: " + c.length);
 	var table = document.getElementById("contact_list");
