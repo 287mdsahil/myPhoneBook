@@ -29,11 +29,11 @@ function contactCompare(a,b)
 }
 
 //OnClick function for the call button on each contact card--------------------------------
-function callButtonOnClick(c)
+function callButtonOnClick()
 {
 	var callMenuDiv = document.getElementById("callMenuBackground");
-	//callMenuDiv.style.display = "block";
-	window.alert("call button pressed");
+	callMenuDiv.style.display = "block";
+	//window.alert("call button pressed");
 }
 
 
@@ -71,7 +71,7 @@ function onSuccessContactFind(c)
 		var img2 = document.createElement('img');
 		img2.classList.add("callButtonImg");
 		img2.src="img/call.png"
-		img2.addEventListener("click",callButtonOnClick(c[i]));
+		img2.addEventListener("click",callButtonOnClick);
 		
 		cell1.appendChild(img2);
 		//displaying contact numbers
