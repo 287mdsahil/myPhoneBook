@@ -32,8 +32,8 @@ function contactCompare(a,b)
 function callButtonOnClick()
 {
 	var callMenuDiv = document.getElementById("callMenuBackground");
-	//callMenuDiv.style.display = "block";
-	window.alert("call button pressed");
+	callMenuDiv.style.display = "block";
+	//window.alert("call button pressed");
 }
 
 

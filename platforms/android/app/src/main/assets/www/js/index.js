@@ -34,6 +34,10 @@ function callButtonOnClick()
 	var callMenuDiv = document.getElementById("callMenuBackground");
 	callMenuDiv.style.display = "block";
 	//window.alert("call button pressed");
+	
+	document.addEventListener("backbutton",function (){
+		callMenuDiv.style.display = "none";
+	});
 }
 
 
