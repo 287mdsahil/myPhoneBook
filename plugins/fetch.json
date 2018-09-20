@@ -30,5 +30,13 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cordova-plugin-native-dialer": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-native-dialer@^1.0.0"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

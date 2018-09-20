@@ -1,26 +1,7 @@
-/*contents of this multiline comment is not working
 
-//sorts the contacts in alphabetical order of the displayName-------------------------------(bugged, whats the problem i guess???????)
-function contactSort(c)
-{
-	for(var i=0;i<c.length-1;i++)
-	{
-		var m=i;
-		for(var j=i+1;j<c.length;j++)
-		{
-			if(c[j].displayName>c[m].displayName)
-				m=j;
-				console.log(c[j].displayName + "<" + c[m].displayName);
-		}
-		
-		var dummy = navigator.contacts.create();
-		dummy=c[m];
-		c[m]=c[i];
-		c[i]=c[m];
-	}
-	return c;
-}
-*/
+
+
+
 //compares the contacts wrt to the displayName---------------------------------------------
 function contactCompare(a,b)
 {
@@ -41,17 +22,23 @@ function contactCompare(a,b)
 			if(b.displayName==null)
 				return 0;
 			else if(b.displayName!=null)
-				return -1;
+				return 1;
 		else 
-			return 1;
+			return -1;
 	}
 }
 
-
+//OnClick function for the call button on each contact card--------------------------------
+function callButtonOnClick(c)
+{
+	var callMenuDiv = document.getElementById("callMenuBackground");
+	//callMenuDiv.style.display = "block";
+	window.alert("call button pressed");
+}
 
 
 //stores the contacts and displays them the table view--------------------------------------
-function onSuccess(c)
+function onSuccessContactFind(c)
 {
 	
 	//c=contactSort(c);
@@ -82,8 +69,9 @@ function onSuccess(c)
 		cell1.appendChild(nameDiv);
 		
 		var img2 = document.createElement('img');
-		img2.classList.add("menuDots");
+		img2.classList.add("callButtonImg");
 		img2.src="img/call.png"
+		img2.addEventListener("click",callButtonOnClick(c[i]));
 		
 		cell1.appendChild(img2);
 		//displaying contact numbers
@@ -102,11 +90,19 @@ function onSuccess(c)
 	}
 }
 
+
+//error fucntion in dontact find method------------------------------------------------
+function onErrorContactFind(e)
+{
+	window.alert("Error occured: " + e);
+}
+
+
 //main fucntion========================================================================
 document.addEventListener("deviceready", onDeviceReady);
 function onDeviceReady() 
 {
 	var fields = 	["*"];
-					
-	navigator.contacts.find(fields, onSuccess);
+	navigator.contacts.find(fields, onSuccessContactFind, onErrorContactFind);
+	
 }

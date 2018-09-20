@@ -18,6 +18,9 @@
     },
     "cordova-plugin-contacts-phonenumbers": {
       "PACKAGE_NAME": "com.mdsahil.myPhoneBook"
+    },
+    "cordova-plugin-native-dialer": {
+      "PACKAGE_NAME": "com.mdsahil.myPhoneBook"
     }
   },
   "dependent_plugins": {}

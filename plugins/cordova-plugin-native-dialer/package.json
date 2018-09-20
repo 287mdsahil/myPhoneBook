@@ -1,0 +1,59 @@
+{
+  "_from": "cordova-plugin-native-dialer@^1.0.0",
+  "_id": "cordova-plugin-native-dialer@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-eZGmg7SiiuVGLyXeY3s26tG+NjkOAPNVXpTtp10UJ3t/zUDJhvS6/8/Iku0KHo8XoB76o+UIm704iAgBQvyjuA==",
+  "_location": "/cordova-plugin-native-dialer",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "cordova-plugin-native-dialer@^1.0.0",
+    "name": "cordova-plugin-native-dialer",
+    "escapedName": "cordova-plugin-native-dialer",
+    "rawSpec": "^1.0.0",
+    "saveSpec": null,
+    "fetchSpec": "^1.0.0"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-native-dialer/-/cordova-plugin-native-dialer-1.0.0.tgz",
+  "_shasum": "7c39204a386e160b7740e8b33a26e60b4577551a",
+  "_spec": "cordova-plugin-native-dialer@^1.0.0",
+  "_where": "/home/sahil/project/myPhoneBook",
+  "author": {
+    "name": "Rafat Alhawash"
+  },
+  "bugs": {
+    "url": "https://github.com/RAlhawash/cordova-plugin-native-dialer/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-native-dialer",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova Plugin Native Dialer",
+  "homepage": "https://github.com/RAlhawash/cordova-plugin-native-dialer#readme",
+  "keywords": [
+    "cordova",
+    "call",
+    "dialer",
+    "phonegap",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "license": "Apache 2.0",
+  "name": "cordova-plugin-native-dialer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RAlhawash/cordova-plugin-native-dialer.git"
+  },
+  "version": "1.0.0"
+}
