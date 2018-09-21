@@ -28,7 +28,7 @@ body
 	border-radius:50%;
 }
 
-#contact_list td .menuDots
+#contact_list td .callButtonImg
 {
 	height: 50px;
 	float: right;
@@ -42,7 +42,7 @@ body
 
 #callMenuBackground
 {
-	display: none;
+	display: blocks;
 	position: fixed;
 	z-index: 1;
 	top: 0;
