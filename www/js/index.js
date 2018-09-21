@@ -2,6 +2,59 @@
 
 
 
+
+
+//OnClick function for the call button on each contact card--------------------------------
+function callButtonOnClick(c)
+{
+	callMenuDiv = document.createElement("div");
+	callMenuDiv.id="callMenuBackground";
+	document.body.appendChild(callMenuDiv);
+	
+	callMenuCard = document.createElement("div");
+	callMenuCard.id="callMenuCard";
+	callMenuDiv.appendChild(callMenuCard);
+
+	
+	for(let i=0;i<c.phoneNumbers.length;i++)
+	{
+		var numberDiv = document.createElement("div");
+		numberDiv.innerHTML = c.phoneNumbers[i].value;
+		numberDiv.classList.add("numberCard");
+		callMenuCard.appendChild(numberDiv);
+	}
+	
+		
+	
+	document.addEventListener("backbutton",function (){
+		callMenuDiv.style.display = "none";
+	});
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //compares the contacts wrt to the displayName---------------------------------------------
 function contactCompare(a,b)
 {
@@ -27,33 +80,6 @@ function contactCompare(a,b)
 			return -1;
 	}
 }
-
-//OnClick function for the call button on each contact card--------------------------------
-function callButtonOnClick(c)
-{
-	var callMenuDiv = document.getElementById("callMenuBackground");
-	callMenuDiv.style.display = "block";
-	
-
-	console.dir(c);
-	
-	/*
-	for(var i=0;i<c.phoneNumbers.length;i++)
-	{
-		var numberDiv = document.createElement("div");
-		numberDiv.innerHTML = c.phoneNumbers[i];
-		callMenuDiv.appendChild(numberDiv);
-	}
-	*/
-	
-		
-	
-	document.addEventListener("backbutton",function (){
-		callMenuDiv.style.display = "none";
-	});
-	
-}
-
 
 //stores the contacts and displays them the table view--------------------------------------
 function onSuccessContactFind(c)
