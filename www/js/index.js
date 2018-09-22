@@ -1,12 +1,15 @@
 
 
-
+var eventStateFlag = 0;
+// 0 means the screen in on the home screen
+// 1 means the call button is pressed
 
 
 
 //OnClick function for the call button on each contact card--------------------------------
 function callButtonOnClick(c)
 {
+	eventStateFlag = 1;
 	callMenuDiv = document.createElement("div");
 	callMenuDiv.id="callMenuBackground";
 	document.body.appendChild(callMenuDiv);
@@ -27,7 +30,11 @@ function callButtonOnClick(c)
 		
 	
 	document.addEventListener("backbutton",function (){
-		callMenuDiv.style.display = "none";
+		if(eventStateFlag==1)
+		{
+			callMenuDiv.style.display = "none";
+			eventStateFlag = 0;
+		}
 	});
 	
 }
@@ -139,4 +146,10 @@ function onDeviceReady()
 {
 	var fields = 	["*"];
 	navigator.contacts.find(fields, onSuccessContactFind, onErrorContactFind);
+	
+	document.addEventListener("backbutton",function ()
+	{
+		if(eventStateFlag==0)
+			navigator.app.exitApp();
+	});
 }
