@@ -4,9 +4,14 @@ var eventStateFlag = 0;
 // 0 means the screen in on the home screen
 // 1 means the call button is pressed
 
+//onSucces and onError call back functions
+function onSuccessCallNumber(result)
+{console.log("Success:" + result);}
+function onErrorCallNumber(result)
+{console.log("Success:" + result);}
 
 
-//OnClick function for the call button on each contact card--------------------------------
+//onClick function for the call button on each contact card--------------------------------
 function callButtonOnClick(c)
 {
 	eventStateFlag = 1;
@@ -25,13 +30,19 @@ function callButtonOnClick(c)
 		numberDiv.innerHTML = c.phoneNumbers[i].value;
 		numberDiv.classList.add("numberCard");
 		callMenuCard.appendChild(numberDiv);
-	}
-	
 		
+		//clicking the numbers performs the phone call
+		numberDiv.addEventListener("click",function (){
+			window.plugins.CallNumber(onSuccessCallNumber,onErrorCallNumber,c.phoneNumbers[i].value);
+		});
+	}
 	
 	document.addEventListener("backbutton",function (){
 		if(eventStateFlag==1)
+		{
 			callMenuDiv.style.display = "none";
+			eventStateFlag = 0;
+		}
 	});
 	
 }

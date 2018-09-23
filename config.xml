@@ -27,5 +27,6 @@
     <plugin name="cordova-plugin-console" spec="^1.1.0" />
     <plugin name="cordova-plugin-contacts-phonenumbers" spec="0.0.11" />
     <plugin name="cordova-plugin-native-dialer" spec="^1.0.0" />
+    <plugin name="cordova-plugin-call-number" spec="^1.0.1" />
     <engine name="android" spec="^7.0.0" />
 </widget>
