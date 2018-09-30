@@ -11,6 +11,24 @@ function onErrorCallNumber(result)
 {console.log("Success:" + result);}
 
 
+//==============================================
+function duplicateNumberPresent(phoneNumbers,i)
+{
+	if(i == phoneNumbers.length-1)
+		return false;
+		
+	num1=phoneNumbers[i].value.replace(/\s/g, "");
+	console.dir(num1);
+	for(let j=i+1;j<phoneNumbers.length;j++)
+	{
+		num2=phoneNumbers[j].value.replace(/\s/g, "")
+		console.dir(num2);
+		if(num1==num2)
+			return true;
+	}
+	return false;
+}
+
 //onClick function for the call button on each contact card--------------------------------
 function callButtonOnClick(c)
 {
@@ -31,25 +49,30 @@ function callButtonOnClick(c)
 	
 	for(let i=0;i<c.phoneNumbers.length;i++)
 	{
-		var numberDiv = document.createElement("div");
-		numberDiv.innerHTML = c.phoneNumbers[i].value;
-		numberDiv.classList.add("numberCard");
-		callMenuCard.appendChild(numberDiv);
+		//=====================================================
+		if(!duplicateNumberPresent(c.phoneNumbers,i))
+		{
+			var numberDiv = document.createElement("div");
+			numberDiv.innerHTML = c.phoneNumbers[i].value;
+			numberDiv.classList.add("numberCard");
+			callMenuCard.appendChild(numberDiv);
 		
-		//clicking the numbers performs the phone call
-		numberDiv.addEventListener("click",function (){
-			window.plugins.CallNumber.callNumber(onSuccessCallNumber,onErrorCallNumber,c.phoneNumbers[i].value);
-			callMenuDiv.style.opacity = "0";
-			setTimeout(function(){
-				callMenuDiv.style.display = "none";
-			},300);
-			eventStateFlag = 0;
-		});
+			//clicking the numbers performs the phone call
+			numberDiv.addEventListener("click",function (){
+				window.plugins.CallNumber.callNumber(onSuccessCallNumber,onErrorCallNumber,c.phoneNumbers[i].value);
+				callMenuDiv.style.opacity = "0";
+				setTimeout(function(){
+					callMenuDiv.style.display = "none";
+					},300);
+				eventStateFlag = 0;
+			});
+		}
 	}
 	
 	//delayed display of the numbers
 	setTimeout(function(){
-		callMenuDiv.style.height = "100%";
+		callMenuDiv.style.display = "block";
+		callMenuDiv.style.opacity = "1";
 		callMenuDiv.style.paddingTop = "30vh";
 	},300);
 	
@@ -59,24 +82,13 @@ function callButtonOnClick(c)
 		if(eventStateFlag==1)
 		{
 			callMenuDiv.style.paddingTop = "0vh";
-			callMenuDiv.style.height = "0%";
+			callMenuDiv.style.opacity = "0";
+			setTimeout(function(){
+				callMenuDiv.style.display = "none";
+			},300);
 			eventStateFlag = 0;
 		}
 	});
-	
-	/*
-	//clicking outside the callMenuCard return to the home screen
-	if(eventStateFlag==1)
-	{
-		document.addEventListener('click', function(e){
-			if(!(callMenuCard.contains(e.target)))
-			{
-				callMenuDiv.style.display = "none";
-				eventStateFlag = 0;
-			}
-		});
-	}
-	*/
 }
 
 
