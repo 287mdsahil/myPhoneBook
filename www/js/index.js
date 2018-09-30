@@ -23,6 +23,11 @@ function callButtonOnClick(c)
 	callMenuCard.id="callMenuCard";
 	callMenuDiv.appendChild(callMenuCard);
 
+	callMenuCardHeading = document.createElement("div");
+	callMenuCardHeading.id = "callMenuCardHeading";
+	callMenuCardHeading.innerHTML = "Select number:";
+	callMenuCard.appendChild(callMenuCardHeading);
+	
 	
 	for(let i=0;i<c.phoneNumbers.length;i++)
 	{
@@ -34,9 +39,13 @@ function callButtonOnClick(c)
 		//clicking the numbers performs the phone call
 		numberDiv.addEventListener("click",function (){
 			window.plugins.CallNumber.callNumber(onSuccessCallNumber,onErrorCallNumber,c.phoneNumbers[i].value);
+			callMenuDiv.style.display = "none";
+			eventStateFlag = 0;
 		});
 	}
 	
+	
+	//backbutton return to the home screen
 	document.addEventListener("backbutton",function (){
 		if(eventStateFlag==1)
 		{
@@ -45,6 +54,19 @@ function callButtonOnClick(c)
 		}
 	});
 	
+	/*
+	//clicking outside the callMenuCard return to the home screen
+	if(eventStateFlag==1)
+	{
+		document.addEventListener('click', function(e){
+			if(!(callMenuCard.contains(e.target)))
+			{
+				callMenuDiv.style.display = "none";
+				eventStateFlag = 0;
+			}
+		});
+	}
+	*/
 }
 
 
