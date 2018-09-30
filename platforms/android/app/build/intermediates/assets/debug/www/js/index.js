@@ -39,17 +39,31 @@ function callButtonOnClick(c)
 		//clicking the numbers performs the phone call
 		numberDiv.addEventListener("click",function (){
 			window.plugins.CallNumber.callNumber(onSuccessCallNumber,onErrorCallNumber,c.phoneNumbers[i].value);
-			callMenuDiv.style.display = "none";
+			callMenuDiv.style.opacity = "0";
+			setTimeout(function(){
+				callMenuDiv.style.display = "none";
+			},300);
 			eventStateFlag = 0;
 		});
 	}
+	
+	//delayed display of the numbers
+	setTimeout(function(){
+		callMenuDiv.style.display = "block";
+		callMenuDiv.style.opacity = "1";
+		callMenuDiv.style.paddingTop = "30vh";
+	},300);
 	
 	
 	//backbutton return to the home screen
 	document.addEventListener("backbutton",function (){
 		if(eventStateFlag==1)
 		{
-			callMenuDiv.style.display = "none";
+			callMenuDiv.style.paddingTop = "0vh";
+			callMenuDiv.style.opacity = "0";
+			setTimeout(function(){
+				callMenuDiv.style.display = "none";
+			},300);
 			eventStateFlag = 0;
 		}
 	});
